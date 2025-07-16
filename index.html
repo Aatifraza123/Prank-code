@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Secure Access</title>
+  <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+
+<!-- Password Screen -->
+<div id="login">
+  <h2>Enter Admin Password</h2>
+  <input type="password" id="password" placeholder="********">
+  <div id="password-hint" style="color: #666; font-size: 12px; margin-top: 5px; display: none;">
+    Password persistence: <span id="password-status">Ready</span>
+  </div>
+  <input type="button" id="accessBtn" value="Click here to get admin password" onclick="getPassword()">
+  <input type="button" id="loginBtn" value="Access" onclick="checkPassword()" style="display: none;">
+</div>
+
+<!-- Danger Alert Screen -->
+<div id="danger-alert" style="display: none;">
+  <div style="font-size: 48px; color: #ff0000; animation: dangerBlink 0.5s infinite; margin-bottom: 30px;">
+    ⚠️ DANGER ⚠️
+  </div>
+  <div style="font-size: 32px; color: #ff0000; font-weight: bold; margin-bottom: 20px;">
+    SYSTEM BREACH DETECTED
+  </div>
+  <div style="font-size: 24px; color: #ff0000; margin-bottom: 15px;">
+    UNAUTHORIZED ACCESS IN PROGRESS
+  </div>
+  <div style="font-size: 20px; color: #ff0000;">
+    FIREWALL COMPROMISED
+  </div>
+</div>
+
+<!-- Terminal Simulation -->
+<div id="terminal"></div>
+
+<!-- Final Message -->
+<div id="final-message">
+  <h1>🎉 GOTCHA! 🎉</h1>
+  <p>You've been pranked!</p>
+  <p>This was just a harmless joke.</p>
+  <input type="button" id="restart-btn" value="Restart Prank" onclick="restart()">
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
