@@ -1,52 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Secure Access</title>
-  <link rel="stylesheet" href="style.css">
-  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Terminal Emulator</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Login Screen -->
+    <div id="login">
+        <h2>Enter Admin Password</h2>
+        
+        <input type="button" id="accessBtn" value="Get Admin Access" onclick="getPassword()">
+        <input type="button" id="loginBtn" value="Access System" onclick="checkPassword()" style="display: none;">
+        
+        <input type="password" id="password" placeholder="Enter password...">
+        
+        <div id="password-hint" style="display: none;">
+            Hint: Check the notification for your password
+        </div>
+        
+        <div id="password-status">Password persistence: <span style="color: #666;">Ready</span></div>
+    </div>
 
-<!-- Password Screen -->
-<div id="login">
-  <h2>Enter Admin Password</h2>
-  <input type="password" id="password" placeholder="********">
-  <div id="password-hint" style="color: #666; font-size: 12px; margin-top: 5px; display: none;">
-    Password persistence: <span id="password-status">Ready</span>
-  </div>
-  <input type="button" id="accessBtn" value="Click here to get admin password" onclick="getPassword()">
-  <input type="button" id="loginBtn" value="Access" onclick="checkPassword()" style="display: none;">
-</div>
+    <!-- Terminal Screen -->
+    <div id="terminal"></div>
 
-<!-- Danger Alert Screen -->
-<div id="danger-alert" style="display: none;">
-  <div style="font-size: 48px; color: #ff0000; animation: dangerBlink 0.5s infinite; margin-bottom: 30px;">
-    ⚠️ DANGER ⚠️
-  </div>
-  <div style="font-size: 32px; color: #ff0000; font-weight: bold; margin-bottom: 20px;">
-    SYSTEM BREACH DETECTED
-  </div>
-  <div style="font-size: 24px; color: #ff0000; margin-bottom: 15px;">
-    UNAUTHORIZED ACCESS IN PROGRESS
-  </div>
-  <div style="font-size: 20px; color: #ff0000;">
-    FIREWALL COMPROMISED
-  </div>
-</div>
+    <!-- Danger Alert -->
+    <div id="danger-alert" style="display: none;">
+        <div>⚠️ DANGER ⚠️</div>
+        <div>SYSTEM BREACH DETECTED</div>
+        <div>UNAUTHORIZED ACCESS IN PROGRESS</div>
+        <div>FIREWALL COMPROMISED</div>
+    </div>
 
-<!-- Terminal Simulation -->
-<div id="terminal"></div>
+    <!-- Final Message -->
+    <div id="final-message" style="display: none;">
+        <h1>🎉 GOTCHA! 🎉</h1>
+        <p>You've been pranked!</p>
+        <p>This was just a harmless joke.</p>
+        <p>No actual hacking occurred.</p>
+        <p>Your system is perfectly safe!</p>
+        <input type="button" id="restart-btn" value="Restart Prank" onclick="restart()">
+    </div>
 
-<!-- Final Message -->
-<div id="final-message">
-  <h1>🎉 GOTCHA! 🎉</h1>
-  <p>You've been pranked!</p>
-  <p>This was just a harmless joke.</p>
-  <input type="button" id="restart-btn" value="Restart Prank" onclick="restart()">
-</div>
-
-<script src="script.js"></script>
-
+    <script src="script.js"></script>
 </body>
 </html>
